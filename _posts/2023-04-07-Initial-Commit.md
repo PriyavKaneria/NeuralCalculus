@@ -1,3 +1,7 @@
-# First Blog
+---
+title: Initial Commit
+categories: []
+tags: []
+---
 
-This is my first blog post.
+Wrinting blogs for Documentation of my knowledge and life, 2023 onwards.

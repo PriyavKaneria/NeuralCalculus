@@ -9,6 +9,7 @@ tags: [security, transformer]
 1. [Prompt Injection](https://simonwillison.net/2023/Apr/14/worst-that-can-happen/)
 2. [Thoughts on preventing prompt injection](https://simonwillison.net/2022/Sep/17/prompt-injection-more-ai/)
 3. [Transformer Models](https://txt.cohere.ai/what-are-transformer-models/)
+4. [Curated list of defensive measures](https://learnprompting.org/docs/prompt_hacking/defensive_measures)
 
 ## My thoughts
 
@@ -33,6 +34,10 @@ English to French",
 ```
 We can see the vulnerability here is the "ignore previous instructions". But how does it work, and what does the model understand when we say something like that. If the model has "suppose" an internal language where the instruction is _i_ and input is _usr\_inp_, ideally we could track the vulnerability by identifying if after parsing the user input do we still consider the _i_ in the ouput?
 
-We also have a solution where we write the instruction where we force the model to follow it and in any case it can not be ignored. I still need to try this out whether it works this way or not.
-
 To understand this we need to dig deeper into how the transformer models work in the first place.
+
+After going through the inner workings of the [transformer model](https://txt.cohere.ai/what-are-transformer-models/) it is easy to see what I meant by "AI language". It is the vectors which we get after positional encoding.
+
+My hypothesis is if we know the vectors for our instruction _i_, we can track changes to it and identify if the output vector similarity is changed or affected by the user input _usr\_inp_.
+
+Still need to think about it

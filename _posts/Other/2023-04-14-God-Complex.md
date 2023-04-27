@@ -1,6 +1,6 @@
 ---
 title: God Complex
-categories: [Other]
+categories: [other]
 tags: [god]
 ---
 

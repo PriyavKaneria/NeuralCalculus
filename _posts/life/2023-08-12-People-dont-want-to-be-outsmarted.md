@@ -4,7 +4,7 @@ categories: [life]
 tags: [behaviour]
 ---
 
-### People were evolved to be self-centered. Not just me or you, it's everyone. But how and to what extent are we self-centered is a good question to ask yourself.
+### People were evolved to be self-centered. Not just me or you, it's everyone. But how and to what extent are we self-centered is a good question to ask yourself
 
 I won't say that I have met a lot of people in my life, because I have met people who are expert at that; But everyone I meet, I or probably everyone judge them. Well, I don't judge their character or such things, but I judge them in very broad and general terms. Their personality, how they act, react and talk with younger, pals and elders in different situations (keeping context in mind).
 

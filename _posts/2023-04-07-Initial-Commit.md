@@ -4,4 +4,4 @@ categories: []
 tags: []
 ---
 
-Wrinting blogs for Documentation of my knowledge and life, 2023 onwards.
+Writing blogs for Documentation of my knowledge and life, 2023 onwards.

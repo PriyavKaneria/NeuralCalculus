@@ -4,10 +4,10 @@ categories: [life]
 tags: [train, senses, survival]
 ---
 
-> यततो ह्यपि कौन्तेय पुरुषस्य विपश्चित: |
-इन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मन: || 60||
-> yatato hyapi kaunteya puruṣhasya vipaśhchitaḥ
-indriyāṇi pramāthīni haranti prasabhaṁ manaḥ
+> यततो ह्यपि कौन्तेय पुरुषस्य विपश्चित: |  
+इन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मन: || 60||  
+yatato hyapi kaunteya puruṣhasya vipaśhchitaḥ  
+indriyāṇi pramāthīni haranti prasabhaṁ manaḥ  
 >> From Bhagavad Gita: Chapter 2, Verse 60
 Meaning - The senses are so strong and turbulent, O son of Kunti, that they can forcibly carry away the mind even of a person endowed with discrimination who practices self-control.
 

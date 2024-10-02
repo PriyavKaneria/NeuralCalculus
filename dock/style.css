@@ -1,0 +1,374 @@
+html {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ------------------------------------------------------- */
+/* Set base font size based on device */
+html {
+	font-size: 18px;
+}
+@media (max-width: 800px) {
+	html {
+		font-size: 16px;
+	}
+}
+@media (max-width: 600px) {
+	html {
+		font-size: 14px;
+	}
+}
+@media (max-width: 400px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+/* ------------------------------------------------------- */
+/* Canvas and body styling */
+#canvas {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+body {
+	font-family: serif;
+	line-height: 1.6;
+	transition: background cubic-bezier(1, 0.35, 0.69, 0.08) 3s;
+	background: white; /* initial background color - changed by JS */
+}
+
+.bg-reveal-circle {
+	display: block;
+	position: absolute;
+	z-index: -2;
+	top: 0%;
+	left: 36%;
+	width: 30rem;
+	height: 30rem;
+	border-radius: 50%;
+	transition: background 2s, top cubic-bezier(0.86, 2.16, 0.48, 0.91) 500ms,
+		left cubic-bezier(0.86, 2.16, 0.48, 0.91) 500ms;
+	background: transparent; /* initial background color - changed by JS */
+}
+
+/* ------------------------------------------------------- */
+/* Content positioning */
+content {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	width: 80%;
+	max-width: 1000px;
+}
+.text-color-invert {
+	filter: invert(1);
+	mix-blend-mode: difference;
+}
+.pointer-events-none {
+	pointer-events: none;
+}
+.pointer-events-auto {
+	pointer-events: auto;
+}
+
+/* ------------------------------------------------------- */
+/* Header styling */
+#heading {
+	font-family: "Butler", serif; /* Butler, Bohemian Soul, KestaiKpersonaluse, LinLibertine, Mermaid, Minguwest */
+	font-size: 2.5rem;
+	font-weight: 1000;
+	margin-bottom: 0.5rem;
+	color: #333;
+}
+.word-type {
+	font-style: italic;
+	font-size: 1rem;
+	color: #666;
+	display: inline-block;
+}
+.pronouns-hover span {
+	display: inline-block;
+}
+.pronouns-hover span.pronouns {
+	display: none;
+}
+.pronouns-hover:hover span {
+	display: none;
+}
+.pronouns-hover:hover span.pronouns {
+	display: inline-block;
+	font-size: 0.8rem;
+}
+.invisible {
+	visibility: hidden;
+}
+
+.translations {
+	font-size: 0.95rem;
+	font-weight: 500;
+	color: #888;
+	display: block;
+	margin-bottom: 0.2rem;
+}
+.gujarati {
+	font-family: "Noto Sans Gujarati", sans-serif;
+}
+.seperator {
+	font-family: "Butler", serif;
+	font-size: 1.7rem;
+	font-weight: 100;
+	color: #9f9f9f;
+}
+.hindi {
+	font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+.aka {
+	font-family: "Butler", serif;
+	font-style: normal;
+	font-size: 1.4rem;
+	font-weight: 800;
+	color: #555;
+}
+.aka i {
+	font-size: 1rem;
+}
+
+/* ------------------------------------------------------- */
+/* Description styling */
+.description {
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+	font-style: italic;
+	color: #2d2d2d;
+}
+.description span {
+	display: inline;
+}
+@media (max-width: 600px) {
+	p.description span {
+		display: block;
+	}
+}
+
+/* ------------------------------------------------------- */
+/* Introduction and navigation */
+.intro-section {
+	font-weight: 400;
+	margin-top: 3rem;
+	text-align: left;
+	color: #1e332c;
+}
+.intro-text {
+	font-size: 1.4rem;
+	text-align: justify;
+	margin-bottom: 1.5rem;
+	padding: 0 100px;
+}
+@media (max-width: 600px) {
+	.intro-text {
+		padding: 0 10px;
+	}
+}
+.nav-container {
+	display: flex;
+	justify-content: center;
+}
+.nav-list {
+	list-style-type: none;
+	padding: 0;
+	font-size: 1.5rem;
+	font-weight: 500;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav-item {
+	position: relative;
+}
+.nav-item a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+.nav-item a:hover {
+	text-decoration: underline;
+}
+.nav-item:hover .loader-container {
+	opacity: 1;
+}
+
+/* ------------------------------------------------------- */
+/* General styling */
+.w-max {
+	max-width: max-content;
+}
+.w-full {
+	width: 100%;
+}
+.flex {
+	display: flex;
+}
+.justify-between {
+	justify-content: space-between;
+}
+.items-center {
+	align-items: center;
+}
+.text-large {
+	font-size: 1.9rem;
+}
+
+/* Loader and trail CSS */
+.loader {
+	--size: 12px;
+	--distance: 80px;
+	--xturns: 1turn;
+	--yturns: 1turn;
+	--duration: 6s;
+}
+
+.loader:nth-of-type(1),
+.loader:nth-of-type(2),
+.loader:nth-of-type(3) {
+	content: "";
+	position: absolute;
+	top: calc(50% - var(--size) * 0.5);
+	left: calc(50% - var(--size) * 0.5);
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	background: black;
+}
+
+.loader {
+	transform-style: preserve-3d;
+	animation: figure-eight var(--duration) linear infinite;
+	--xturns-neg: calc(var(--xturns) * -1);
+	--yturns-neg: calc(var(--yturns) * -1);
+}
+
+.loader:nth-of-type(1),
+.loader:nth-of-type(3) {
+	display: inline;
+	animation: figure-eight-invert var(--duration) linear infinite,
+		figure-eight var(--duration) linear infinite;
+	animation-composition: add;
+}
+
+.loader:nth-of-type(1) {
+	animation-delay: 0s, calc(var(--duration) * -0.333333);
+}
+.loader:nth-of-type(3) {
+	animation-delay: 0s, calc(var(--duration) * -0.666666);
+}
+
+.loader-container {
+	position: relative;
+	top: 1rem;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.trail-container {
+	position: relative;
+	pointer-events: none;
+}
+.trail-particle {
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	background: #3e3e3e;
+	border-radius: 50%;
+	transition: "background" 0.2s;
+	animation: trail 0.8s linear infinite;
+}
+
+@keyframes figure-eight {
+	from {
+		transform: rotateX(var(--xturns)) rotateY(var(--yturns))
+			translateZ(var(--distance)) rotateY(var(--yturns-neg))
+			rotateX(var(--xturns-neg));
+	}
+	to {
+		transform: rotateX(var(--xturns-neg)) rotateY(var(--yturns-neg))
+			translateZ(var(--distance)) rotateY(var(--yturns)) rotateX(var(--xturns));
+	}
+}
+
+@keyframes figure-eight-invert {
+	from {
+		transform: rotateX(var(--xturns-neg)) rotateY(var(--yturns-neg))
+			translateZ(var(--distance)) rotateY(var(--yturns)) rotateX(var(--xturns));
+	}
+	to {
+		transform: rotateX(var(--xturns)) rotateY(var(--yturns))
+			translateZ(var(--distance)) rotateY(var(--yturns-neg))
+			rotateX(var(--xturns-neg));
+	}
+}
+
+@keyframes trail {
+	from {
+		background: #3e3e3e;
+	}
+	to {
+		background: #ffffff;
+	}
+}
+
+@property --size {
+	syntax: "<length>";
+	inherits: true;
+	initial-value: 0px;
+}
+@property --distance {
+	syntax: "<length>";
+	inherits: true;
+	initial-value: 0px;
+}
+@property --xturns {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0turn;
+}
+@property --yturns {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0turn;
+}
+@property --xturns-neg {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0turn;
+}
+@property --yturns-neg {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0turn;
+}
+@property --duration {
+	syntax: "<time>";
+	inherits: true;
+	initial-value: 0s;
+}

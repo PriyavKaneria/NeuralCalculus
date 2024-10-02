@@ -1,0 +1,130 @@
+/* Butler */
+
+@font-face {
+	font-family: "Butler";
+	src: url("fonts/Butler-UltraLight.woff2") format("woff2"),
+		url("fonts/Butler-UltraLight.woff") format("woff");
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Butler";
+	src: url("fonts/Butler-Medium.woff2") format("woff2"),
+		url("fonts/Butler-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Butler";
+	src: url("fonts/Butler-Light.woff2") format("woff2"),
+		url("fonts/Butler-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Butler";
+	src: url("fonts/Butler-Black.woff2") format("woff2"),
+		url("fonts/Butler-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Butler";
+	src: url("fonts/Butler-Bold.woff2") format("woff2"),
+		url("fonts/Butler-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Butler";
+	src: url("fonts/Butler-ExtraBold.woff2") format("woff2"),
+		url("fonts/Butler-ExtraBold.woff") format("woff");
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Butler";
+	src: url("fonts/Butler.woff2") format("woff2"),
+		url("fonts/Butler.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Bohemian Soul */
+
+@font-face {
+	font-family: "Bohemian Soul";
+	src: url("fonts/Bohemian Soul.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* KestaiKpersonaluse */
+
+@font-face {
+	font-family: "KestaiKpersonaluse";
+	src: url("fonts/Kestaikpersonaluise.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* LinLibertine */
+
+@font-face {
+	font-family: "LinLibertine";
+	src: url("fonts/LinLibertine_R.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "LinLibertine";
+	src: url("fonts/LinLibertine_RI.ttf") format("truetype");
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "LinLibertine";
+	src: url("fonts/LinLibertine_RB.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "LinLibertine";
+	src: url("fonts/LinLibertine_RBI.ttf") format("truetype");
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* Mermaid */
+
+@font-face {
+	font-family: "Mermaid";
+	src: url("fonts/Mermaid1001.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Mermaid";
+	src: url("fonts/Mermaid Swash Caps.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Minguwest */
+
+@font-face {
+	font-family: "Minguwest";
+	src: url("fonts/Minguwest demo.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}

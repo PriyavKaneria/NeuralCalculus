@@ -23,7 +23,7 @@ title: NeuralCalculus # the main title
 tagline: Expect until you can predict # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  Blog where I ocassionally write some of the many thoughts I have every moment
+  Blog where I occasionally write some of the many thoughts I have every moment
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: ""
@@ -32,7 +32,7 @@ github:
   username: priyavkaneria # change to your github username
 
 twitter:
-  username: priyav_kaneria # change to your twitter username
+  username: _diginova # change to your twitter username
 
 social:
   # Change to your full name.

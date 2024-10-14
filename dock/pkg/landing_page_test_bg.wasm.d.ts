@@ -1,0 +1,31 @@
+/* tslint:disable */
+/* eslint-disable */
+export const memory: WebAssembly.Memory;
+export function __wbg_grid_free(a: number, b: number): void;
+export function grid_new(a: number, b: number): number;
+export function grid_set_flipping(a: number, b: number): void;
+export function grid_get_flip_state(a: number, b: number): number;
+export function grid_all_same(a: number): number;
+export function grid_step_flip_single_to_value(a: number, b: number): void;
+export function grid_width(a: number): number;
+export function grid_height(a: number): number;
+export function __wbg_transformmatrix_free(a: number, b: number): void;
+export function __wbg_get_transformmatrix_a(a: number): number;
+export function __wbg_set_transformmatrix_a(a: number, b: number): void;
+export function __wbg_get_transformmatrix_b(a: number): number;
+export function __wbg_set_transformmatrix_b(a: number, b: number): void;
+export function __wbg_get_transformmatrix_c(a: number): number;
+export function __wbg_set_transformmatrix_c(a: number, b: number): void;
+export function __wbg_get_transformmatrix_d(a: number): number;
+export function __wbg_set_transformmatrix_d(a: number, b: number): void;
+export function __wbg_get_transformmatrix_e(a: number): number;
+export function __wbg_set_transformmatrix_e(a: number, b: number): void;
+export function __wbg_get_transformmatrix_f(a: number): number;
+export function __wbg_set_transformmatrix_f(a: number, b: number): void;
+export function transformmatrix_new(): number;
+export function transformmatrix_multiply(a: number, b: number): number;
+export function transformmatrix_translate(a: number, b: number, c: number): number;
+export function transformmatrix_rotate(a: number, b: number): number;
+export function transformmatrix_scale(a: number, b: number, c: number): number;
+export function transformmatrix_apply_transformations(a: number, b: number, c: number, d: number, e: number, f: number): number;
+export function triangle_height(a: number): number;

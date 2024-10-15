@@ -114,19 +114,55 @@ function main() {
                 const data = ["theme", grid_flip_state ? "dark" : "light"];
                 parent.postMessage(data, "http://127.0.0.1:4000");
                 // run the exit animation
-                handleExit(anchor);
                 const hrefData = ["href", "#" + anchor.href.toString().split("#")[1]];
+                if (hrefData[1] !== "#interesume") {
+                    handleExit(anchor);
+                }
+                if (hrefData[1] === "#projects") {
+                    parent.postMessage(["msg", "projects"], "http://127.0.0.1:4000");
+                }
+                else if (hrefData[1] === "#interesume") {
+                    // use screen height to decide which pdf to redirect target blank
+                    const screen_height = window.innerHeight + 10;
+                    
+                    const nbviewer_base = "https://nbviewer.org/github/PriyavKaneria/PriyavKaneria/blob/main/Interesume%20v1.2-public";
+                    let href = "";
+                    if (screen_height > 1440) {
+                        href = nbviewer_base + "-122.pdf";
+                    }
+                    else if (screen_height > 1080) {
+                        href = nbviewer_base + "-90.pdf";
+                    }
+                    else if (screen_height > 900) {
+                        href = nbviewer_base + "-74.pdf";
+                    }
+                    else if (screen_height > 864) {
+                        href = nbviewer_base + "-71.pdf";
+                    }
+                    else if (screen_height > 768) {
+                        href = nbviewer_base + "-63.pdf";
+                    }
+                    else if (screen_height > 720) {
+                        href = nbviewer_base + "-59.pdf";
+                    }
+                    else {
+                        href = nbviewer_base + "-80.pdf";
+                    }
+                    alert("fyi: resume was last updated just before graduation");
+                    window.open(href, "_blank");
+                    window.location.reload();
+                    return;
+                }
                 setTimeout(() => {
-                    ;
                     parent.postMessage(hrefData, "http://127.0.0.1:4000"); // Send the hash to the parent window
-                }, 5000);
+                }, 3000);
             });
         }
         run_animation_loop();
     });
 }
 function resizeCanvas() {
-    console.log("Resizing canvas", canvas);
+    // console.log("Resizing canvas", canvas);
     canvas.width = window.innerWidth + triangle_height(TILE_SIZE);
     canvas.height = window.innerHeight + TILE_SIZE;
     const gridWidth = Math.ceil(window.innerWidth / triangle_height(TILE_SIZE)) + 2;

@@ -1,6 +1,6 @@
 ---
 title: A Deeper thought into Work-Life Balance
-categories: [Life]
+categories: [life]
 tags: [life]
 ---
 

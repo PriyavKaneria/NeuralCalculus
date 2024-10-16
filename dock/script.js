@@ -92,7 +92,7 @@ function main() {
         // set initial theme from parent message
         ;
         window.addEventListener("message", (event) => {
-            if (event.origin === "http://127.0.0.1:4000") {
+            if (event.origin === "https://priyavkaneria.com") {
                 if (event.data === "dark") {
                     handleClick(new MouseEvent("click", {
                         clientX: heading.getBoundingClientRect().left +
@@ -104,7 +104,7 @@ function main() {
         });
         // ask for the theme from parent
         const data = ["asktheme"];
-        parent.postMessage(data, "http://127.0.0.1:4000");
+        parent.postMessage(data, "https://priyavkaneria.com");
         // set the anchor tags to properly redirect in parent
         const anchors = document.getElementsByTagName("a");
         for (let i = 0; i < anchors.length; i++) {
@@ -112,14 +112,14 @@ function main() {
             anchor.addEventListener("click", function (event) {
                 event.preventDefault(); // Prevent the default anchor click behavior
                 const data = ["theme", grid_flip_state ? "dark" : "light"];
-                parent.postMessage(data, "http://127.0.0.1:4000");
+                parent.postMessage(data, "https://priyavkaneria.com");
                 // run the exit animation
                 const hrefData = ["href", "#" + anchor.href.toString().split("#")[1]];
                 if (hrefData[1] !== "#interesume") {
                     handleExit(anchor);
                 }
                 if (hrefData[1] === "#projects") {
-                    parent.postMessage(["msg", "projects"], "http://127.0.0.1:4000");
+                    parent.postMessage(["msg", "projects"], "https://priyavkaneria.com");
                 }
                 else if (hrefData[1] === "#interesume") {
                     // use screen height to decide which pdf to redirect target blank
@@ -154,7 +154,7 @@ function main() {
                     return;
                 }
                 setTimeout(() => {
-                    parent.postMessage(hrefData, "http://127.0.0.1:4000"); // Send the hash to the parent window
+                    parent.postMessage(hrefData, "https://priyavkaneria.com"); // Send the hash to the parent window
                 }, 3000);
             });
         }

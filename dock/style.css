@@ -79,6 +79,11 @@ content {
 	width: 80%;
 	max-width: 1000px;
 }
+@media (max-width: 600px) {
+	content {
+		top: 5%;
+	}
+}
 .text-color-invert {
 	filter: invert(1);
 	mix-blend-mode: difference;
@@ -107,6 +112,11 @@ content {
 }
 .pronouns-hover span {
 	display: inline-block;
+}
+@media (max-width: 600px) {
+	.pronouns-hover:first-of-type {
+		display: none;
+	}
 }
 .pronouns-hover span.pronouns {
 	display: none;

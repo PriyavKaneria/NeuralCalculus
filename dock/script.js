@@ -14,7 +14,7 @@ let canvas;
 let ctx;
 let revealer;
 let body = document.body;
-const TILE_SIZE = 30;
+let TILE_SIZE = 30;
 const MAX_FLIP_STATES = 16;
 let grid_flip_state = false;
 let grid_set_transparent = false;
@@ -23,6 +23,11 @@ let clickedTileY = 0;
 let clikedIndex = 0;
 let mouseX = 0;
 let mouseY = 0;
+let mobileDevice = false;
+const parentURL = "https://priyavkaneria.com" //prod
+// const parentURL = "http://127.0.0.1:4000" //dev
+
+let tileTriangleHeight = 0;
 // rAF normalization
 window.requestAnimationFrame = (function () {
     return (window.requestAnimationFrame ||
@@ -47,8 +52,10 @@ function main() {
         ctx = canvas.getContext("2d");
         canvas.style.position = "fixed";
         canvas.style.zIndex = "-1";
+        TILE_SIZE = TILE_SIZE / triangle_height(1);
+        tileTriangleHeight = triangle_height(TILE_SIZE);
         // Initialize grid
-        const gridWidth = Math.ceil(window.innerWidth / triangle_height(TILE_SIZE)) + 2;
+        const gridWidth = Math.ceil(window.innerWidth / tileTriangleHeight) + 2;
         const gridHeight = Math.ceil(window.innerHeight / (TILE_SIZE * 0.5));
         grid = Grid.new(gridWidth, gridHeight);
         resizeCanvas();
@@ -90,9 +97,9 @@ function main() {
             addTrailingParticles(loaders[i]);
         }
         // set initial theme from parent message
-        ;
+        
         window.addEventListener("message", (event) => {
-            if (event.origin === "https://priyavkaneria.com") {
+            if (event.origin === parentURL) {
                 if (event.data === "dark") {
                     handleClick(new MouseEvent("click", {
                         clientX: heading.getBoundingClientRect().left +
@@ -104,7 +111,7 @@ function main() {
         });
         // ask for the theme from parent
         const data = ["asktheme"];
-        parent.postMessage(data, "https://priyavkaneria.com");
+        parent.postMessage(data, parentURL);
         // set the anchor tags to properly redirect in parent
         const anchors = document.getElementsByTagName("a");
         for (let i = 0; i < anchors.length; i++) {
@@ -112,14 +119,14 @@ function main() {
             anchor.addEventListener("click", function (event) {
                 event.preventDefault(); // Prevent the default anchor click behavior
                 const data = ["theme", grid_flip_state ? "dark" : "light"];
-                parent.postMessage(data, "https://priyavkaneria.com");
+                parent.postMessage(data, parentURL);
                 // run the exit animation
                 const hrefData = ["href", "#" + anchor.href.toString().split("#")[1]];
                 if (hrefData[1] !== "#interesume") {
                     handleExit(anchor);
                 }
                 if (hrefData[1] === "#projects") {
-                    parent.postMessage(["msg", "projects"], "https://priyavkaneria.com");
+                    parent.postMessage(["msg", "projects"], parentURL);
                 }
                 else if (hrefData[1] === "#interesume") {
                     // use screen height to decide which pdf to redirect target blank
@@ -154,7 +161,7 @@ function main() {
                     return;
                 }
                 setTimeout(() => {
-                    parent.postMessage(hrefData, "https://priyavkaneria.com"); // Send the hash to the parent window
+                    parent.postMessage(hrefData, parentURL); // Send the hash to the parent window
                 }, 3000);
             });
         }
@@ -163,11 +170,12 @@ function main() {
 }
 function resizeCanvas() {
     // console.log("Resizing canvas", canvas);
-    canvas.width = window.innerWidth + triangle_height(TILE_SIZE);
+    canvas.width = window.innerWidth + tileTriangleHeight;
     canvas.height = window.innerHeight + TILE_SIZE;
-    const gridWidth = Math.ceil(window.innerWidth / triangle_height(TILE_SIZE)) + 2;
+    const gridWidth = Math.ceil(window.innerWidth / tileTriangleHeight) + 2;
     const gridHeight = Math.ceil(window.innerHeight / (TILE_SIZE * 0.5));
     grid = Grid.new(gridWidth, gridHeight);
+    mobileDevice = window.innerWidth < 600 || window.innerHeight < 500;
     drawGrid();
 }
 function drawGrid() {
@@ -176,23 +184,24 @@ function drawGrid() {
         for (let col = 0; col < grid.width(); col++) {
             const index = row * grid.width() + col;
             const [x, y] = getTrianglePosition(row, col);
-            drawTriangle(row, col, x, y, TILE_SIZE, grid.get_flip_state(index));
+            drawTriangle(row, col, x, y, grid.get_flip_state(index));
         }
     }
 }
 function getTrianglePosition(row, col) {
-    const x = col * triangle_height(TILE_SIZE);
+    const x = col * tileTriangleHeight;
     const y = (TILE_SIZE * (row + 1)) / 2;
     return [x, y];
 }
-function drawTriangle(row, col, x, y, size, flip_state) {
+function drawTriangle(row, col, x, y, flip_state) {
     ctx.save();
     // transform matrix for animatinf while flipping
-    if (flip_state != MAX_FLIP_STATES &&
+    if (!mobileDevice &&
+        flip_state != MAX_FLIP_STATES &&
         flip_state != -MAX_FLIP_STATES &&
         clikedIndex != row * grid.width() + col) {
         const transform = TransformMatrix.new();
-        const result = transform.apply_transformations(clickedTileX, clickedTileY, x + size / 2, y, flip_state / MAX_FLIP_STATES);
+        const result = transform.apply_transformations(clickedTileX, clickedTileY, x + TILE_SIZE / 2, y, flip_state / MAX_FLIP_STATES);
         const transformMatrix = new DOMMatrix([
             result.a,
             result.b,
@@ -206,13 +215,14 @@ function drawTriangle(row, col, x, y, size, flip_state) {
     ctx.beginPath();
     ctx.moveTo(x, y);
     if ((row + col) % 2 == 0) {
-        ctx.lineTo(x + triangle_height(size), y + size / 2);
-        ctx.lineTo(x + triangle_height(size), y - size / 2);
+        const extraOffset = 0.3;
+        ctx.lineTo(x + tileTriangleHeight - extraOffset, y + TILE_SIZE / 2);
+        ctx.lineTo(x + tileTriangleHeight - extraOffset, y - TILE_SIZE / 2);
     }
     else {
-        ctx.lineTo(x, y + size / 2);
-        ctx.lineTo(x + triangle_height(size), y);
-        ctx.lineTo(x, y - size / 2);
+        ctx.lineTo(x, y + TILE_SIZE / 2);
+        ctx.lineTo(x + tileTriangleHeight, y);
+        ctx.lineTo(x, y - TILE_SIZE / 2);
     }
     ctx.closePath();
     // ctx.strokeText(flip_state.toString(), x + size / 2, y - size / 2)
@@ -240,11 +250,11 @@ function drawTriangle(row, col, x, y, size, flip_state) {
 function handleClick(event) {
     return __awaiter(this, void 0, void 0, function* () {
         const rect = canvas.getBoundingClientRect();
-        const clickX = event.clientX - rect.left + triangle_height(TILE_SIZE) / 2;
+        const clickX = event.clientX - rect.left + tileTriangleHeight / 2;
         const clickY = event.clientY - rect.top + TILE_SIZE / 2;
         const col = clickX < rect.width / 2
-            ? Math.floor(clickX / triangle_height(TILE_SIZE)) - 1
-            : Math.floor(clickX / triangle_height(TILE_SIZE));
+            ? Math.floor(clickX / tileTriangleHeight) - 1
+            : Math.floor(clickX / tileTriangleHeight);
         const row = clickY < rect.height / 2
             ? Math.floor(clickY / (TILE_SIZE / 2)) - 1
             : Math.floor(clickY / (TILE_SIZE / 2));
@@ -256,7 +266,7 @@ function handleClick(event) {
             : "radial-gradient(circle, black 0%, transparent 50%)";
         body.style.background = grid_flip_state ? "black" : "white";
         clickedTileX =
-            col * triangle_height(TILE_SIZE) + triangle_height(TILE_SIZE) / 2;
+            col * tileTriangleHeight + tileTriangleHeight / 2;
         clickedTileY = row * (TILE_SIZE / 2) + TILE_SIZE / 4;
         clikedIndex = index;
     });
@@ -267,9 +277,9 @@ function handleExit(element) {
     const x = rect.left +
         rect.width / 2 -
         canvasRect.left +
-        triangle_height(TILE_SIZE) / 2;
+        tileTriangleHeight / 2;
     const y = rect.top + rect.height / 2 - canvasRect.top + TILE_SIZE / 2;
-    const col = Math.floor(x / triangle_height(TILE_SIZE));
+    const col = Math.floor(x / tileTriangleHeight);
     const row = Math.floor(y / (TILE_SIZE / 2));
     const index = row * grid.width() + col;
     // set root color-scheme to match theme - ref : https://fvsch.com/transparent-iframes
@@ -285,7 +295,7 @@ function handleExit(element) {
     content.style.transition = "opacity 2s";
     content.style.opacity = "0";
     clickedTileX =
-        col * triangle_height(TILE_SIZE) + triangle_height(TILE_SIZE) / 2;
+        col * tileTriangleHeight + tileTriangleHeight / 2;
     clickedTileY = row * (TILE_SIZE / 2) + TILE_SIZE / 4;
     clikedIndex = index;
 }

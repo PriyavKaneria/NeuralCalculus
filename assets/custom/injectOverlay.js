@@ -1,3 +1,5 @@
+const dockURL = "https://dock.priyavkaneria.com" //prod
+// const dockURL = "http://127.0.0.1:8080" //dev
 
 function injectOverlay(projectOnly = false) {
     // Inject the style into the head
@@ -31,12 +33,13 @@ function injectOverlay(projectOnly = false) {
     if (!projectOnly) {
         document.body.insertBefore(iframe, document.body.firstChild);
     }
-    iframe.src = "https://dock.priyavkaneria.com";
+    iframe.src = dockURL;
 
     // Inject projects iframe for smooth transition to projects page
     const projectsIframe = document.createElement("iframe");
     projectsIframe.id = "projects-iframe";
     projectsIframe.src = "about: blank";
+    projectsIframe.loading = "lazy";
     projectsIframe.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-same-origin";
     projectsIframe.frameBorder = "0";
     document.body.insertBefore(projectsIframe, document.body.firstChild);
@@ -71,7 +74,7 @@ function injectOverlay(projectOnly = false) {
     );
 
     window.addEventListener("message", (e) => {
-        if (e.origin === "https://dock.priyavkaneria.com") {
+        if (e.origin === dockURL) {
             if (e.data[0] === "theme") {
                 const theme = e.data[1];
                 if (theme == "dark") {
@@ -95,7 +98,7 @@ function injectOverlay(projectOnly = false) {
                 if ((userPrefersDark && !sessionStorage.getItem("mode")) || sessionStorage.getItem("mode") === "dark") {
                     iframe.contentWindow.postMessage(
                         "dark",
-                        "https://dock.priyavkaneria.com"
+                        dockURL
                     );
                 }
             } else if (e.data[0] === "msg") {

@@ -58,10 +58,6 @@ google_analytics:
     proxy_endpoint: # fill in the Google Analytics superProxy endpoint of Google App Engine
     cache_path: # the local PV cache data, friendly to visitors from GFW region
 
-umami:
-  id: "db3809b3-a673-468b-b9a9-53ace8eaebe3"
-  domain: "https://umami-sable-xi.vercel.app"
-
 
 # Prefer color scheme setting.
 #

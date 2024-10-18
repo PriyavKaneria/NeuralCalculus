@@ -132,7 +132,10 @@ function main() {
                     // use screen height to decide which pdf to redirect target blank
                     const screen_height = window.innerHeight + 10;
                     
-                    const nbviewer_base = "https://nbviewer.org/github/PriyavKaneria/PriyavKaneria/blob/main/Interesume%20v1.2-public";
+                    let nbviewer_base = "https://nbviewer.org/github/PriyavKaneria/PriyavKaneria/blob/main/Interesume%20v1.2-public";
+                    if (mobileDevice) {
+                        nbviewer_base = "https://drive.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/PriyavKaneria/PriyavKaneria/main/Interesume%20v1.2-public";
+                    }
                     let href = "";
                     if (screen_height > 1440) {
                         href = nbviewer_base + "-122.pdf";
@@ -153,9 +156,9 @@ function main() {
                         href = nbviewer_base + "-59.pdf";
                     }
                     else {
-                        href = nbviewer_base + "-80.pdf";
+                        href = nbviewer_base + ".pdf";
                     }
-                    alert("fyi: resume was last updated just before graduation");
+                    alert("fyi: resume was last updated just before graduation. best viewed on desktop devices");
                     window.open(href, "_blank");
                     window.location.reload();
                     return;

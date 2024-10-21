@@ -21,9 +21,9 @@ I spent a week just collecting good personal websites. Came across amazing peopl
     - Let the users decide on whether he wants to see my projects, my thoughts or probably [everything about me in single pdf](https://interesume.priyavkaneria.com/)
 
 After looking at about atleast a 100 or more websites I collected these notes -
-<details>
-    <summary> Expand notes </summary>
 
+{% details Expand notes %}
+  
 1.	[https://www.alexwest.co/](https://www.alexwest.co/)
     - time travel allows you to see how his main about section (or whole) website changed over the years pretentious mode changes content to linkedin like slop with numbers and shit
     ⁃ most prefer white mode for personal page as it focuses better on content (personal experience)
@@ -63,9 +63,7 @@ References -
 - https://github.com/emmabostian/developer-portfolios
 - https://github.com/amnashanwar/awesome-portfolios
 - personal exploration
-</details>
-
-<br/>
+{% enddetails %}
 
 # Isometric game of life
 While curating these, I got some interesting ideas of [experimenting with conway's game of life](https://gol.priyavkaneria.com/). Specifically of simulation in different sided polygon planes. Started cooking something with 3D game of life, quatum rules, rhombic grid, isometric grid etc. Was already [curious](https://x.com/_diginova/status/1824154416737554719) about wasm and it's usage and [decided](https://x.com/_diginova/status/1824772372173328553) to learn and port to wasm. [wasm is so damn awesome](https://x.com/_diginova/status/1831390206496293340).

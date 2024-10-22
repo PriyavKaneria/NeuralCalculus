@@ -96,8 +96,8 @@ function main() {
         for (let i = 0; i < loaders.length; i++) {
             addTrailingParticles(loaders[i]);
         }
+
         // set initial theme from parent message
-        
         window.addEventListener("message", (event) => {
             if (event.origin === parentURL) {
                 if (event.data === "dark") {
@@ -109,6 +109,7 @@ function main() {
                 }
             }
         });
+
         // ask for the theme from parent
         const data = ["asktheme"];
         parent.postMessage(data, parentURL);
@@ -117,16 +118,23 @@ function main() {
         for (let i = 0; i < anchors.length; i++) {
             const anchor = anchors[i];
             anchor.addEventListener("click", function (event) {
+                console.log("anchor clicked");
+                
                 event.preventDefault(); // Prevent the default anchor click behavior
                 const data = ["theme", grid_flip_state ? "dark" : "light"];
                 parent.postMessage(data, parentURL);
                 // run the exit animation
                 const hrefData = ["href", "#" + anchor.href.toString().split("#")[1]];
+                
                 if (hrefData[1] !== "#interesume") {
                     handleExit(anchor);
                 }
                 if (hrefData[1] === "#projects") {
                     parent.postMessage(["msg", "projects"], parentURL);
+                }
+                else if (hrefData[1] === "#index") {
+                    console.log("index");
+                    parent.postMessage(["msg", "index"], parentURL);
                 }
                 else if (hrefData[1] === "#interesume") {
                     // use screen height to decide which pdf to redirect target blank

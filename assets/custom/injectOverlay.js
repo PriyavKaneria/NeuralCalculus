@@ -1,6 +1,9 @@
 const dockURL = "https://dock.priyavkaneria.com" //prod
 // const dockURL = "http://127.0.0.1:8080" //dev
 
+// disable the bfcache, as it interferes with the custom navigation
+// see - https://web.dev/articles/bfcache
+
 function injectOverlay(projectOnly = false) {
     // Inject the style into the head
     const style = document.createElement("style");
@@ -140,6 +143,13 @@ if (perfEntries[0].type === "back_forward") {
     // console.log("User navigated using back or forward button");
     handlePageShow(true);
 }
+
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      console.log('This page was restored from the bfcache.');
+      location.reload();
+    }
+});
 
 function handlePageShow(backForward = false) {
     // do not show overlay when #blog is in the url

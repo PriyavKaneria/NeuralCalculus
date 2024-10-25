@@ -4,11 +4,11 @@ categories: [tech]
 tags: [portfolio, development, design, website]
 ---
 
-# Context
+## Context
 
 This is a writeup, mainly for my own documentation as to what thoughts went in while I made my [new personal website](https://priyavkaneria.com/). I bought the domain a few months ago and had this planned from years since I made my [first portfolio](https://fancy.priyavkaneria.com/) in my college first year. The complete process took be near about 3 months more or less.
 
-# Collecting inspirations
+## Collecting inspirations
 
 I spent a week just collecting good personal websites. Came across amazing people and their personal brands. I already had some points in mind:
 - it has to be minimalist
@@ -65,7 +65,7 @@ References -
 - personal exploration
 {% enddetails %}
 
-# Isometric game of life
+## Isometric game of life
 While curating these, I got some interesting ideas of [experimenting with conway's game of life](https://gol.priyavkaneria.com/). Specifically of simulation in different sided polygon planes. Started cooking something with 3D game of life, quatum rules, rhombic grid, isometric grid etc. Was already [curious](https://x.com/_diginova/status/1824154416737554719) about wasm and it's usage and [decided](https://x.com/_diginova/status/1824772372173328553) to learn and port to wasm. [wasm is so damn awesome](https://x.com/_diginova/status/1831390206496293340).
 
 Side story on the side, the isometric grid took my most attention. While simulating different variations of birth rules in isometric grid I felt that this kind of geometric animation is what I'm looking for. I started experimenting on the side with individual grid cell animations, 3d transformations and the most efficient way I can utilize wasm here to make it working.
@@ -134,7 +134,7 @@ ctx.setTransform(transformMatrix);
 
 By offloading these calculations to WASM, we achieve smoother animations and better performance, especially on devices with limited processing power. This is crucial for maintaining a fluid user experience across various devices.
 
-# Overlay and iframes
+## Overlay and iframes
 
 The magic behind the seamless transitions in this portfolio lies in a clever combination of overlays and iframes.
 
@@ -162,7 +162,7 @@ function injectOverlay(projectOnly = false) {
 
 This approach allows for independent scrolling within each section while maintaining that background animation. It's like having multiple pages in one, without the jarring page reloads!
 
-# Handling the dock
+## Handling the dock
 
 The dock isn't just a pretty face – it's the navigation powerhouse of this portfolio. Events fired when you click on a link:
 
@@ -185,7 +185,7 @@ window.addEventListener("message", (e) => {
 });
 ```
 
-# Handling the navigation
+## Handling the navigation
 
 Navigation in this portfolio is where traditional meets innovative. The dock provides quick access to main sections, but the real magic happens behind the scenes.
 
@@ -216,7 +216,7 @@ We've also got a `hashchange` event listener that triggers this function wheneve
 window.addEventListener("hashchange", checkUrlAndManageIframe, false);
 ```
 
-# Keeping the user engaged
+## Keeping the user engaged
 
 Engagement is the name of the game in any portfolio, and I wanted to make sure there are fine details sprinkled that give the "aha" momemnt to the user when they find it themselves. This includes the revealer on mouse move, the animation on click, the trailing particles on link hover etc.
 
@@ -235,16 +235,16 @@ function addTrailingParticles(loader) {
 
 While this portfolio is something I wanted to build for myself, I was and am still learning to sell. This was one of things I tried, before launch to [create some hype](https://x.com/_diginova/status/1838845695316377977).
 
-# The subtle details for the dopamine hit
+## The subtle details for the dopamine hit
 
 It's the little things that often leave the biggest impression. I wanted my website to be chock-full of subtle details that provide those satisfying "aha" moments. This is something that I've always loved and you can observe that in full in my old portfolio [fancy.priyavkaneria.com](https://fancy.priyavkaneria.com)
 
-# Working on feedback
+## Working on feedback
 
 Received good feedback from people from lots of places. Some things I am working on 
 - navigation is still wrong
-    - there is no way of going back to dock from the blog page
-    - projects page link also can be in the blog sidebar
-- interesume link is blocked/not working for random iterations, works on second time
+    - there is no way of going back to dock from the blog page [fixed]
+    - projects page link also can be in the blog sidebar [fixed]
+- interesume link is blocked/not working for random iterations, works on second time [can't help, so moved]
 
 I hope by going through this journey with me you learnt something new as well. Feel free to reach out for anything.

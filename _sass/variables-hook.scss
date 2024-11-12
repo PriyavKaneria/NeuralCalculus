@@ -7,7 +7,7 @@
   transform: scale(1) !important;
 }
 
-#sidebar #avatar > a {
-  border: unset !important;
+#sidebar #avatar {
+  box-shadow: unset !important;
   border-radius: unset !important;
 }

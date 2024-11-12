@@ -59,7 +59,7 @@ analytics:
   google:
     id: # fill in your Google Analytics ID
   goatcounter:
-    id: # fill in your GoatCounter ID
+    id: diginova
   umami:
     id: db3809b3-a673-468b-b9a9-53ace8eaebe3
     domain: umami-sable-xi.vercel.app
@@ -73,7 +73,7 @@ analytics:
 
 # Page views settings
 pageviews:
-  provider: # now only supports 'goatcounter'
+  provider: goatcounter
 
 # Prefer color scheme setting.
 #

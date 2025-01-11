@@ -191,8 +191,8 @@ function handlePageShow(backForward = false) {
         window.location.href = "/#dock";
         window.location.reload();
     }
-    else {
-        // take him to the dock
+    else if (window.location.pathname === "/") {
+        // take him to the dock if no other path is matched
         window.location.href = "/#dock";
         window.location.reload();
     }

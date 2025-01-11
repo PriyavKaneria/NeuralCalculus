@@ -10,6 +10,7 @@ everyone's life has has ups and downs. those downs in hindi slang, we call as bh
 
 Any form of energy follows the laws of energy. let's validate -
 > energy can neither be created nor destroyed
+
 - checks out. people usually in language use the word more generally like you made this bhasad etc. but what the intention actually is is you caused the bhasad. the bhasad was transfered from some person to you. it did not spawn out of nowhere and neither will it go away on it's own
 - bhasad is transfered via convection, conduction, radiation
     - convection - people when faced a problem either solve the problem, or just talk about it to others. so as to share the pain. and it actually works. the bhasad get's shared equally until there is an equilibrium.

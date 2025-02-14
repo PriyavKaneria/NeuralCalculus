@@ -152,6 +152,15 @@ window.addEventListener('pageshow', (event) => {
 });
 
 function handlePageShow(backForward = false) {
+    const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+    if (isFirefox) {
+        console.log("Firefox detected, disabling dock");
+        if (window.location.hash.includes("#dock")) {
+            alert("Please use Chrome or Safari for the best experience.");
+            window.location.href = "/";
+        }
+        return;
+    }
     // do not show overlay when #blog is in the url
     if (window.location.hash.includes("#blog")) {
         // redirect to /

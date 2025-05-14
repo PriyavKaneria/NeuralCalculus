@@ -1,6 +1,6 @@
 ---
 title: A Better Mosquito Repellent
-categories: [homescience]
+categories: [other]
 tags: [mosquito]
 ---
 

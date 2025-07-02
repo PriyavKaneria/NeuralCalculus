@@ -8,7 +8,7 @@ Money is currency. But money isn't the only currency.
 
 Everone is rich of something. Some are rich in wood working, some in electronics, some in knitting etc. Think of every skill in the world as a different currency. While I am sure everyone is rich, it is a fact that nobody really knows about their wealth up until some point of time in their life, and that too in moment where you use/share that currency.
 
-# Math might make thhings easier
+# Math might make things easier
 
 No complicated maths, just simple game theory. You have $100000, and everyone else has ₹100 and you are in India. Your aim is to survive in India. What will you do? It is so obvious this way isn't it? You'll trade you bucks for rupees and get wealthy and survive. Here the important part to understand is **to survive you need something that you do not already have**.
 

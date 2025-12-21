@@ -1,5 +1,5 @@
 ---
-title: Solar accurate timekeeping to borrow from theh future
+title: Solar accurate timekeeping to borrow from the future
 categories: [tech]
 tags: [time,future]
 ---

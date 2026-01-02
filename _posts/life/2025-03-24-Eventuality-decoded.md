@@ -4,6 +4,7 @@ categories: [life]
 tags: [expectation, blessing, eventuality, karma]
 math: true
 mermaid: true
+pin: true
 ---
 
 > If not already read, I would suggest reading my previous related article on [events and the impact of our thoughts on the eventuality](/_posts/life/2024-01-04-Knowing-a-little-more-about-the-unpredictable.md)

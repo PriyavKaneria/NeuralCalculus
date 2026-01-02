@@ -2,6 +2,7 @@
 title: The tree of success
 categories: [life]
 tags: [tree,success,idioms]
+pin: true
 ---
 
 imagine a tree

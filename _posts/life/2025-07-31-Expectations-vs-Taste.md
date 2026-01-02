@@ -2,6 +2,7 @@
 title: Expectations vs Taste
 categories: [life]
 tags: [expectation, taste, happiness]
+pin: true
 ---
 
 ## Ultimate desires of life

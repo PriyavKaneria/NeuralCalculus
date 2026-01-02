@@ -2,6 +2,7 @@
 title: Optimization game
 categories: [life]
 tags: [game, fun, boring]
+pin: true
 ---
 
 There exists a idle clicker game, that involves actions and rewards. There are 100s of actions to choose from. You select an action you either get a reward or you do not. And for every action the rewards slowly get bigger but further apart separated by more and more non-reward or at times penalty actions. You only know the outcome once you perform a type of action and you know of no future actions or rewards.

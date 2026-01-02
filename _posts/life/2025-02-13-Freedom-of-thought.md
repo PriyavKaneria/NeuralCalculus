@@ -2,6 +2,7 @@
 title: Freedom of thought
 categories: [life]
 tags: [freedom,think,meditate]
+pin: true
 ---
 
 ![the meaning of life when asked to gpt4o in one word, gives liberation](/assets/img/posts/meaning-of-life.png){: w="700" h="400" .shadow}

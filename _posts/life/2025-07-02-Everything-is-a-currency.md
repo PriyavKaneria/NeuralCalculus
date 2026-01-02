@@ -2,6 +2,7 @@
 title: Everything is a currency
 categories: [life]
 tags: [barter, currency, knowledge, social]
+pin: true
 ---
 
 Money is currency. But money isn't the only currency.

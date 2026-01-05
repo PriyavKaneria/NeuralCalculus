@@ -11,7 +11,7 @@
       {%- endif -%}
     </a>
 
-    <h1 class="site-title">
+    <h1 class="site-title d-block">
       <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
     </h1>
     <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
@@ -50,15 +50,32 @@
   </nav>
 
   <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center w-100">
+    {% unless site.theme_mode %}
+      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      {% if site.data.contact.size > 0 %}
+        <span class="icon-border"></span>
+      {% endif %}
+    {% endunless %}
 
     {% for entry in site.data.contact %}
+      {%- assign url = null -%}
+
       {% case entry.type %}
         {% when 'github', 'twitter' %}
+          {%- unless site[entry.type].username -%}
+            {%- continue -%}
+          {%- endunless -%}
           {%- capture url -%}
             https://{{ entry.type }}.com/{{ site[entry.type].username }}
           {%- endcapture -%}
         {% when 'email' %}
-          {% assign email = site.social.email | split: '@' %}
+          {%- unless site.social.email -%}
+            {%- continue -%}
+          {%- endunless -%}
+          {%- assign email = site.social.email | split: '@' -%}
           {%- capture url -%}
             javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
           {%- endcapture -%}
@@ -91,12 +108,6 @@
         </a>
       {% endif %}
     {% endfor %}
-
-    {% unless site.theme_mode %}
-      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
-        <i class="fas fa-adjust"></i>
-      </button>
-    {% endunless %}
   </div>
   <!-- .sidebar-bottom -->
 </aside>

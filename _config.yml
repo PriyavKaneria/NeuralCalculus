@@ -40,7 +40,6 @@ social:
     - https://twitter.com/priyav_kaneria # change to your twitter homepage
     - https://github.com/PriyavKaneria # change to your github
     - https://www.linkedin.com/in/priyavkaneria/
-    - https://linktr.ee/diginova
 
 # Site Verification Settings
 webmaster_verifications:
@@ -206,12 +205,13 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
+  - docs
   - tools
   - README.md
   - CHANGELOG.md
   - LICENSE
+  - purgecss.js
   - node_modules
-  - docs
   - "*.config.js"
   - package*.json
 

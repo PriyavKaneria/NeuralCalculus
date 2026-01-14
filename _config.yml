@@ -61,7 +61,7 @@ analytics:
     id: diginova
   umami:
     id: db3809b3-a673-468b-b9a9-53ace8eaebe3
-    domain: https://umami-sable-xi.vercel.app
+    domain: https://umami.priyavkaneria.com
   matomo:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain

@@ -30,7 +30,7 @@ Everyone who knows me well knows that I am a person with low expectations. so th
 
 yeah this sounds like a rant of defence but what you have to take from here is that it is that good taste is **knowing about what expectations to keep from things, and not about having a set minimum expectation of them**
 
-I strive to be a person with no expectations as I mentioned even in my other articles about [causality](/_posts/life/2025-03-24-Eventuality-decoded.md) or [life](/_posts/life/2024-01-04-Knowing-a-little-more-about-the-unpredictable.md) in general
+I strive to be a person with no expectations as I mentioned even in my other articles about [causality](/posts/Eventuality-decoded) or [life](/postsKnowing-a-little-more-about-the-unpredictable) in general
 
 > "Be a person of no expectations and high taste."
 

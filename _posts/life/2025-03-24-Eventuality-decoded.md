@@ -7,7 +7,7 @@ mermaid: true
 pin: true
 ---
 
-> If not already read, I would suggest reading my previous related article on [events and the impact of our thoughts on the eventuality](/_posts/life/2024-01-04-Knowing-a-little-more-about-the-unpredictable.md)
+> If not already read, I would suggest reading my previous related article on [events and the impact of our thoughts on the eventuality](/posts/Knowing-a-little-more-about-the-unpredictable)
 
 ## What am I even talking about?
 Eventuality as I define it is anything that happens, mainly to you. With you as the subject, target, protagonist, all of it. It may or may not even apply to others as well but that is something you can ponder for yourself later.
@@ -43,7 +43,7 @@ flowchart TD
     T --> |Others| B(Blessings)
 ```
 
-- When one thinks anything related to personal outcome, that falls into expectations. And as we already discussed in my [past](/_posts/life/2024-01-04-Knowing-a-little-more-about-the-unpredictable.md) blog, expectations collapse the superposition timeline, or you can say simply reduce the probability of that event happening. In mathematical terms, it is inversely proportional to the outcome of the action.
+- When one thinks anything related to personal outcome, that falls into expectations. And as we already discussed in my [past](/posts/Knowing-a-little-more-about-the-unpredictable) blog, expectations collapse the superposition timeline, or you can say simply reduce the probability of that event happening. In mathematical terms, it is inversely proportional to the outcome of the action.
 - When one thinks anything about others, that is blessing. If we think good about others, that is positive blessing for them, and if we think bad about them, that is negative blessing (curse). This is directly proportional to the outcome, blessings help and curses do not.
 
 -----------

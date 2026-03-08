@@ -11,7 +11,7 @@ It's not like I haven't shipped anything. There's lots of projects which I have 
 Other projects get up to MVP and then get lesser and lesser priority upon newer ideas which I get. Every time it's better than the last (so it seems).
 > It's not really a bad trait
 
-Ideating more, building more, and even almost shipping the MVP has given me a lot of [necessary survival skills]({% link _posts/life/2024-04-16-Reflex-vs-Instinct.md %}). My ideas are getting better, more robust and every time I work on something, I stick to it longer.
+Ideating more, building more, and even almost shipping the MVP has given me a lot of [necessary survival skills]({% link posts/Reflex-vs-Instinct %}). My ideas are getting better, more robust and every time I work on something, I stick to it longer.
 > But...
 
 I also feel inside that it's this sticking that actually matters. you know how like doing is more important than saying, same way sticking is sometimes more important than jumping around. It's like one of those debates - is it better to learn a lot of skills or learn a lot of "some skill". I'm a polymath so you know which side i'm arguing, but you get the point.

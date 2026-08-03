@@ -50,6 +50,14 @@
 
   {{ seo_tags }}
 
+  <!-- Machine-readable discovery for agents that inspect HTML link relations. -->
+  <link
+    rel="alternate"
+    type="application/json"
+    title="Agent skills discovery index"
+    href="{{ '/.well-known/agent-skills/index.json' | relative_url }}"
+  >
+
   {%- if site.social.fediverse_handle %}
     <!-- Fediverse handle/creator -->
     <meta name="fediverse:creator" content="{{ site.social.fediverse_handle }}">

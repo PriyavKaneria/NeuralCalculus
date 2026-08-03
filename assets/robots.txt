@@ -1,0 +1,11 @@
+---
+permalink: /robots.txt
+---
+
+# Content-use preferences for automated systems.
+# Search indexing and retrieval are welcome; model training is not authorized.
+User-agent: *
+Allow: /
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

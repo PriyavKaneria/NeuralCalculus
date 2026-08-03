@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "site-reading",
+      "type": "skill-md",
+      "description": "Find, read, and accurately cite articles from Priyav Kaneria's public blog.",
+      "url": "/.well-known/agent-skills/site-reading/SKILL.md",
+      "digest": "sha256:b21f4e46d028948551e2976d4b7769a7a2c8789195de642fc6f3dbadcb0a4713"
+    }
+  ]
+}

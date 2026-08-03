@@ -21,8 +21,8 @@ tagline: Expect until you can predict # it will display as the sub-title
 description: >- # used by seo meta and the atom feed
   Blog where I occasionally write some of the many thoughts I have every moment
 
-# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ""
+# Canonical public origin used in absolute discovery and sitemap URLs.
+url: "https://priyavkaneria.com"
 
 github:
   username: priyavkaneria # change to your github username
@@ -214,6 +214,11 @@ exclude:
   - node_modules
   - "*.config.js"
   - package*.json
+
+# Publish the agent-skills discovery endpoint. Jekyll otherwise ignores
+# dot-prefixed directories as static content.
+include:
+  - .well-known
 
 jekyll-archives:
   enabled: [categories, tags]
